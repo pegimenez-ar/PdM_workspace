@@ -15,6 +15,7 @@
   * @brief  Inicializacion de las variables de delay
   * @param  Se debe entregar el puntero a la variable y la duración expresado en milisegundos
   * @retval Ninguno
+  * @error Se validan que el puntero entregado no sea nulo y que la duracion sea distinta de cero
 */
 void delayInit (delay_t* delay, tick_t duration) {
 
@@ -35,17 +36,19 @@ void delayInit (delay_t* delay, tick_t duration) {
   * @retval Retorna false en caso qeu la variable no esta inicia y la inicia
   * 		o si no se ha cumplido el tiempo definido
   * 		Retorna true cuando cuando se ha cumplido el tiempo definido
-  *
+  * @error Se validan que el puntero entregado no sea nulo
 */
 
+
 bool_t delayRead (delay_t* delay) {
+
+	if (delay == NULL)
+		Error_Handler();
 
 	bool_t timeOut = false;
 
 	uint32_t currentTime = HAL_GetTick();
 
-	if (delay == NULL)
-		Error_Handler();
 
 	if (!(delay->running)) {
 
@@ -72,6 +75,7 @@ bool_t delayRead (delay_t* delay) {
   * @brief  Cambio del valor de delay  de una variable
   * @param  Se debe entregar el puntero a la variable y el nuevo valor a modificar. Valor expresado en milisegundos
   * @retval Nada
+  * @error Se validan que el puntero entregado no sea nulo
   *
 */
 void delayWrite (delay_t* delay, tick_t duration) {

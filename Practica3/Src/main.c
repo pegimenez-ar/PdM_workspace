@@ -17,7 +17,6 @@ UART_HandleTypeDef UartHandle;
 /* Private function prototypes -----------------------------------------------*/
 
 static void SystemClock_Config(void);
-void Error_Handler(void);
 
 /* Private functions ---------------------------------------------------------*/
 
@@ -57,9 +56,9 @@ int main(void)
 	/* Declaracion & Inicializacion de variables */
 	delay_t delay_led[NUMERO_LEDS];			//Se defineun array con los delays de cada uno de los elementos del array de leds
 
-	delayInit( &delay_led[0] , DELAY_LED_1);
-	delayInit( &delay_led[1] , DELAY_LED_2);
-	delayInit( &delay_led[2] , DELAY_LED_3);
+	delayInit( &delay_led[0] , DELAY_ON_LEDs);
+	delayInit( &delay_led[1] , DELAY_ON_LEDs);
+	delayInit( &delay_led[2] , DELAY_ON_LEDs);
 
   /* Infinite loop */
 	while (1)

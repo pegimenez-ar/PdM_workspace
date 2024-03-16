@@ -50,12 +50,12 @@
 
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
+void Error_Handler(void);
 
 /*Definicion de variables*/
 #define NUMERO_LEDS 3
-#define DELAY_LED_1 100	 //valor en milisegundos para LED 1
-#define DELAY_LED_2 300	 //valor en milisegundos para LED 2
-#define DELAY_LED_3 800	 //valor en milisegundos para LED 3
+#define DELAY_ON_LEDs 200	//valor en milisegundos del tiempo de encendido de cada led
+
 
 #endif /* __MAIN_H */
 
