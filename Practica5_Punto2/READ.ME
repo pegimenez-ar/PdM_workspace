@@ -1,0 +1,12 @@
+Autor: Pablo Eduardo Gimenez
+Correo: pegimenez@fi.uba.ar
+Materia: 2 - Programacion de Microcontroladores
+
+Trabajo Práctico 5 - Ejercicio 2
+En este punto del trabajo practico se implementa la maquina de estados finitos que se utilizo para el Practico 4 Ejercici 2 para el manejo de un 
+pulsador con antirebotes y a su vez el encendido de un led temporizado con retarnos no bloqueantes. 
+Cuando se presiona el pulsado y se suelta, recien en ese momento se ejecuta el cambio del tiempo de encendido apagado.
+Se puede cargar una matriz de valores y cada vez que se va presionando el boton de usuario se van cambiando los tiempos en base a lo qeu se
+han cargado. En este caso solamente se han cargado 2 valores de 100 mseg y 500 mseg.
+
+Cada vez que se presione el pulsador, se envia por el UART un mensaje de "Flanco Descente" y cuando se suelta se envia el mensaje de "Flanco Ascendente"
