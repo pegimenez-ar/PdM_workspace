@@ -60,6 +60,9 @@ static void _DHT_ComputeData(dht_t* sensor, uint8_t data[]);
  */
 static dhtStatusType_t _DHT_GetData(dht_t* sensor)
 {
+	if(sensor == NULL)
+		return DHT_ERROR;
+
 	dhtStatusType_t _sensor_status = DHT_OK;
 	uint8_t data[5] = {0};
 
@@ -152,6 +155,7 @@ static dhtStatusType_t _DHT_GetData(dht_t* sensor)
  */
 static void _DHT_ComputeData(dht_t* sensor, uint8_t data[])
 {
+
 	float value = 0;
 
 	if(data == NULL){
@@ -287,6 +291,9 @@ dhtStatusType_t DHT_Init(dht_t* sensor, GPIO_TypeDef* GPIO_Port, uint8_t GPIO_Pi
  */
 dhtStatusType_t DHT_Read(dht_t* sensor, tempUnit_t unit)
 {
+	if(sensor == NULL || (unit != C && unit !=F))
+		return DHT_ERROR;
+
 	dhtStatusType_t status = DHT_OK;
 
 	uint32_t currentTime = HAL_GetTick();
@@ -315,6 +322,9 @@ dhtStatusType_t DHT_Read(dht_t* sensor, tempUnit_t unit)
  */
 dhtStatusType_t DHT_ConvertUnit(dht_t* sensor, tempUnit_t unit)
 {
+	if(sensor == NULL || (unit != C && unit !=F))
+		return DHT_ERROR;
+
 	dhtStatusType_t status = DHT_OK;
 
 	if(sensor->dataValid == DHT_NO_VALID_DATA){
@@ -331,12 +341,11 @@ dhtStatusType_t DHT_ConvertUnit(dht_t* sensor, tempUnit_t unit)
 
 	switch(unit){
 	case C:
-		temperature = temperature * 1.8 + 32;
+		temperature = (temperature -32) *0.555;
 		break;
 
 	case F:
 	default:
-
 		temperature = temperature * 1.8 + 32;
 		break;
 	}

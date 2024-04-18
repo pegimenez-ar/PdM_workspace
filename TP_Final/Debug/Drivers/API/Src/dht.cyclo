@@ -1,7 +1,7 @@
-../Drivers/API/Src/dht.c:61:24:_DHT_GetData	12
-../Drivers/API/Src/dht.c:153:13:_DHT_ComputeData	6
-../Drivers/API/Src/dht.c:209:17:_DWT_Delay_Init	2
-../Drivers/API/Src/dht.c:245:20:_DHT_delay	2
-../Drivers/API/Src/dht.c:268:17:DHT_Init	1
-../Drivers/API/Src/dht.c:288:17:DHT_Read	4
-../Drivers/API/Src/dht.c:316:17:DHT_ConvertUnit	4
+../Drivers/API/Src/dht.c:61:24:_DHT_GetData	13
+../Drivers/API/Src/dht.c:156:13:_DHT_ComputeData	6
+../Drivers/API/Src/dht.c:213:17:_DWT_Delay_Init	2
+../Drivers/API/Src/dht.c:249:20:_DHT_delay	2
+../Drivers/API/Src/dht.c:272:17:DHT_Init	1
+../Drivers/API/Src/dht.c:292:17:DHT_Read	7
+../Drivers/API/Src/dht.c:323:17:DHT_ConvertUnit	7

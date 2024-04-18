@@ -68,6 +68,9 @@ static void _API_LCD_Delay(uint32_t delay)
  */
 static bool _API_LCD_Send8bits(lcdType_t* lcd, uint8_t value, uint8_t type)
 {
+	if(lcd == NULL)
+			API_LCD_Error_Handler();
+
 	bool returnValue = false;
 
 	//Se aplica mascara para Nibble superior e inferior
@@ -94,6 +97,9 @@ static bool _API_LCD_Send8bits(lcdType_t* lcd, uint8_t value, uint8_t type)
  */
 static bool _API_LCD_Send4bits(lcdType_t* lcd, uint8_t value, uint8_t type)
 {
+	if(lcd == NULL)
+			API_LCD_Error_Handler();
+
 	bool returnValue = false;
 
 	if(API_LCD_PORT_Transmit(lcd , (value | EN | type | lcd->backlight) ))

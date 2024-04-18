@@ -74,6 +74,9 @@ static void ftoa(float n, char* res, int afterpoint);
   */
 void API_FSM_init(void){
 
+	/*Se inicializa la maquina de estado a su valor por defecto, los timers, el debounce
+	 * del pulsador de usuario, el LCD, el sensor de temperatura y su proceso.
+	 */
 	estadoMEF = BACKLIGHT_ON_C;
 
 	p_delayLCD = &delayLCD;
@@ -92,9 +95,13 @@ void API_FSM_init(void){
 
 	_API_FSM_Process_Temperature_Init();
 
+	//Se toma una medición inicial de temperatura como partida
 	DHT_Read(&sensorTemp, C);
 
+	//Se actualiza los datos en el LCD
 	_API_FSM_UpdateLCD();
+
+	return;
 
 }
 
@@ -162,12 +169,7 @@ void API_FSM_update(void){
 	}
 
 }
-/**
-  * @brief	Funcion que indica si el pulsador fue presionado. Se coloca en TRUE (presionado) solamente cuando se solto el pulsador
-  * 		es decir con un flanco descendente. Una vez que entrega TRUE por haber presionado limpia la variable privada de estado
-  * @param  None
-  * @retval	TRUE en caso que ha existido un pulso descendente del pulsador - FALSE cuando no se ha presionado o el pulsador sigue en estado presionado
-  */
+/*
 tempUnit_t API_FSM_tempUnit(void)
 {
 	switch(estadoMEF){
@@ -185,7 +187,7 @@ tempUnit_t API_FSM_tempUnit(void)
 		break;
 	}
 }
-
+*/
 /**
   * @brief  Funcion que ejecuta accion de apagar el backlight)
   * @param  None
