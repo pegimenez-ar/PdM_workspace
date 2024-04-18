@@ -1,0 +1,4 @@
+../Drivers/API/Src/dht_port.c:55:6:DHT_PORT_SetPinOutput	1
+../Drivers/API/Src/dht_port.c:70:6:DHT_PORT_SetPinInput	1
+../Drivers/API/Src/dht_port.c:85:6:DHT_PORT_SetPinState	1
+../Drivers/API/Src/dht_port.c:97:10:DHT_PORT_ExpectPulse	3

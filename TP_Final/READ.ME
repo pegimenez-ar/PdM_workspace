@@ -1,0 +1,12 @@
+Autor: Pablo Eduardo Gimenez
+Correo: pegimenez@fi.uba.ar
+Materia: Programacion de Microntroladores & Protocolos de Comunicacion de Microntroladores
+
+Trabajo Práctico Final Conjunto
+Se desarrollo un medidor de temperatura y humedad relativa del ambiente implementando con sensores de la familia DHT (DHT11, DHT22 o AM2302).
+Los valores medidos son indicados en un display LCD 20x4 Hd44780 de Hitachi. Por defecto, al encender el dispositivo o en su estado inicial, 
+la temperatura es indicada en grados centigrados (°C) que cambia a visualizarse en grados Fahrenheit (°F) una vez que se presiona un pulsador
+o botón de usuario implementado con el que viene provisto por la placa Nucleo-144. El display tiene un temporizador que cumplido un tiempo 
+predefinido por el programador, es decir no es posible que el usuario final lo modifique, se apaga la pantalla y/o backlight del display y para
+volver a normalizarla se debe presionar el botón de usuario. El periodo de medición de temperatura y humedad se fijo en 1 minuto y el apagado del
+backlight en 30 segundos.
